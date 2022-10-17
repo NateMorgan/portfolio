@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Contact from './pages/Contact/Contact';
 import Resume from './pages/Resume/Resume';
+import Projects from './pages/Projects/Projects';
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<LandingPage/> } />
         <Route path='/resume' element={<Resume/> } />
         <Route path='/contact' element={<Contact/> } />
+        <Route path='/projects' element={<Projects/> } />
       </Routes>
       {/* */}
       <Footer/>

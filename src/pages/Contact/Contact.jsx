@@ -20,13 +20,13 @@ const Contact = (props) => {
             <img src="/img/logos/LinkedIn.png" alt="LinkedIn"/>
         </div>
         <div className="contactRef">
-            <p> <b> LinkedIn: </b> INSERT LINKEDIN URL HERE</p>
+            <p> <b> LinkedIn: </b> https://www.linkedin.com/in/nathaniel-r-morgan/</p>
         </div>
         <div className="logoPic">
             <img src="/img/logos/Twitter.png" alt="Twitter"/>
         </div>
         <div className="contactRef">
-            <p> <b> Twitter: </b> INSERT TWITTER URL HERE</p>
+            <p> <b> Twitter: </b> https://twitter.com/Nate_R_Morgan </p>
         </div>
         {/* <div className="logoPic">
             <img src="/img/logos/Youtube.png" alt="YouTube"/>
