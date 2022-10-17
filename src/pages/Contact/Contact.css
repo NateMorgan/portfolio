@@ -1,0 +1,49 @@
+#contacts{
+  width: 100%;
+
+  font-family: Apple SD Gothic Neo Light;
+}
+
+#leftSideContact{
+  /* grid-area:"left"; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: 150px;
+  float:left;
+  gap: 40px;
+  margin: 5% 10% 0 10%;
+}
+
+.contactRef{
+  align-self: center;
+  font-size: larger;
+}
+
+.logoPic{
+  width: 150px;
+  align-self:center;
+}
+
+img
+{
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#rightSide{
+  display: none;
+}
+
+@media only screen and (min-width: 1100px) {
+  #contacts{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "left" "right";
+  }
+
+  #rightSide{
+    display: block;
+    max-width: 500px;
+  }
+}
