@@ -10,7 +10,7 @@ const Resume = (props) => {
         width="80%"
         />
       <div className="buttonDiv">
-        <button>Download Resume</button>
+        <button className='btn btn-dark'>Download Resume</button>
       </div>
     </main>
    );

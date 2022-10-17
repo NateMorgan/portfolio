@@ -1,12 +1,11 @@
-import "./LandingPage.css"
-
 const LandingPage = (props) => {
   return ( 
     <main className="landing-page">
       <div className="message">
         <h1>Welcome!</h1>
-        <br />
-        <br />
+      </div>
+
+      <div className="message">
         <h1>Feel free to look around</h1>
       </div>
       <img src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
