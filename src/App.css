@@ -1,5 +1,6 @@
 .App {
   height: 100vh;
+  width: 100%;
   margin: 0;
   text-align: center;
   display: grid;
@@ -15,6 +16,16 @@ header{
   grid-area: "header";
 }
 
+header h1{
+  margin:0 0 0 5px;
+  text-align: left;
+  font-size: xxx-large;
+}
+
+h1{
+  font-size: 70px;
+}
+
 nav{
   grid-area:"nav";
   display:flex;
@@ -28,4 +39,166 @@ main{
 
 footer{
   grid-area: "footer";
+}
+
+footer p{
+  margin: 0;
+  font-size:xx-small;
+}
+
+.NavBar{
+  grid-area: "nav";
+}
+
+.buttonDiv{
+  padding: 5px;
+}
+
+/*  Some code heavily modified from */
+/* https://codepen.io/swards/pen/gxQmbj */
+
+.chat-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.chat-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-container{
+  display: flex;
+  align-items: center;
+}
+
+.chat {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: #1982fc;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mine .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background:#1982fc;
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.mine .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+}
+
+/* End of chat code */
+
+.img-container{
+  display:flex;
+  align-items: flex-end;
+}
+
+.headshot{
+  display: none;
+}
+
+.contactRef{
+  align-self: center;
+  font-size: larger;
+}
+
+.logoPic{
+  width: 125px;
+  align-self:center;
+}
+
+.contact-img
+{
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#contacts{
+  width: 100%;
+  font-family: Apple SD Gothic Neo Light;
+}
+
+#leftSideContact{
+  /* grid-area:"left"; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: 125px;
+  float:left;
+  gap: 40px;
+  margin: 5% 10% 0 10%;
+}
+
+#rightSide{
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .headshot{
+    display: block;
+    width: 400px;
+    float:right;
+    align-items: flex-end;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  #contacts{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "left" "right";
+  }
+
+  #rightSide{
+    display: block;
+    max-width: 500px;
+  }
 }

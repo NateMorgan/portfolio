@@ -1,21 +1,30 @@
-import './AboutMe.css'
-
 const AboutMe = (props) => {
   return ( 
-    <main>
-      <div className="message">
-        <h1>I am a software developer focused on creating innovative tools for the financial services industry</h1>
+    <main className='chat-main'>
+      <div className="chat-container">
+        <div className="chat">
+          <div className="mine messages"> 
+            <div className="message">
+              I am a software developer focused on utilizing cutting edge technology to create innovative and efficient tools
+            </div>
+            <div className="message">
+              My background is working the financial services and insurance industry, as a registered professional and actuarial analyst respectively
+            </div>
+            <div className="message">
+              I hope to leverage my background in finance ease the communication gap between developers and business partners 
+            </div>
+            <div className="message">
+              My core technology stack includes: React, SQL, MongoDB, Express, Node, Javascript, Python, and Jupyter Notebooks
+            </div>
+            <div className="message last">
+              I am currently in pursuit of an AWS Certified Cloud Practicioner certificate as well as a full-time job
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="message">
-        <h1> I have worked in the P&C Insurance Industry as an actuarial analyst, as well as recently acquired my Series 7 to begin working as a Registered Representative</h1>
+      <div className="img-container">
+        <img className="headshot" src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
       </div>
-      <div className="message">
-        <h1> My core technology stack includes: React, SQL, MongoDB, Express, Node, Javascript, Python, and Jupyter Notebooks</h1>
-      </div>
-      <div className="message">
-        <h1> I am currently in pursuit of an AWS Certified Cloud Practicioner certificate </h1>
-      </div>
-      <img src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
     </main>
    );
 }

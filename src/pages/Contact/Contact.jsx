@@ -1,42 +1,52 @@
-import './Contact.css'
-
 const Contact = (props) => {
   return ( 
     <main id="contacts">
       <div id="leftSideContact">
         <div className="logoPic"> 
-            <img src="/img/logos/Email.png" alt="Email"/>
+            <img className="contact-img" src="/img/logos/Email.png" alt="Email"/>
         </div>
         <div className="contactRef">
-            <p> <b>Email: </b>nathanielrmorgan@gmail.com </p>
+            <p> 
+              <b>Email: </b>
+              <a href="mailto:nathanielrmorgan@gmail.com">nathanielrmorgan@gmail.com</a> 
+            </p>
         </div>
         <div className="logoPic">
-            <img src="/img/logos/GitHub.png" alt="Github"/>
+            <img className="contact-img" src="/img/logos/GitHub.png" alt="Github"/>
         </div>
         <div className="contactRef">
-            <p><b>Github: </b>https://github.com/NateMorgan</p>
+            <p>
+              <b>Github: </b>
+              <a href="https://github.com/NateMorgan" target="_blank" rel="noreferrer">https://github.com/NateMorgan</a>
+            </p>
         </div>
         <div className="logoPic">
-            <img src="/img/logos/LinkedIn.png" alt="LinkedIn"/>
+            <img className="contact-img" src="/img/logos/LinkedIn.png" alt="LinkedIn"/>
         </div>
         <div className="contactRef">
-            <p> <b> LinkedIn: </b> https://www.linkedin.com/in/nathaniel-r-morgan/</p>
+            <p> 
+              <b> LinkedIn: </b> 
+              <a href="https://www.linkedin.com/in/nathaniel-r-morgan/" target="_blank" rel="noreferrer">https://www.linkedin.com/in/nathaniel-r-morgan/</a>
+            </p>
         </div>
         <div className="logoPic">
-            <img src="/img/logos/Twitter.png" alt="Twitter"/>
+            <img className="contact-img" src="/img/logos/Twitter.png" alt="Twitter"/>
         </div>
         <div className="contactRef">
-            <p> <b> Twitter: </b> https://twitter.com/Nate_R_Morgan </p>
+            <p> 
+              <b> Twitter: </b> 
+              <a href="https://twitter.com/Nate_R_Morgan" target="_blank" rel="noreferrer">https://twitter.com/Nate_R_Morgan</a>
+            </p>
         </div>
         {/* <div className="logoPic">
-            <img src="/img/logos/Youtube.png" alt="YouTube"/>
+            <img className="contact-img" src="/img/logos/Youtube.png" alt="YouTube"/>
         </div>
         <div className="contactRef">
             <p> <b> YouTube: </b> INSERT YOUTUBE URL HERE</p>
         </div> */}
       </div>
       <div id="rightSide">
-          <img src="img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
+          <img className="contact-img" src="img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
       </div>
 
     </main>
