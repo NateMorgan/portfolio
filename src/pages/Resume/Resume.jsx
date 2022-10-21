@@ -8,7 +8,7 @@ const Resume = (props) => {
         width="80%"
         />
       <div className="buttonDiv">
-        <button className='btn btn-dark'>Download Resume</button>
+        <a className="btn btn-dark" href={require("./resume.pdf")} download="Nathaniel Morgan's Resume">Download Resume</a>
       </div>
     </main>
   );

@@ -3,7 +3,9 @@ const Contact = (props) => {
     <main id="contacts">
       <div id="leftSideContact">
         <div className="logoPic"> 
+          <a href="mailto:nathanielrmorgan@gmail.com">
             <img className="contact-img" src="/img/logos/Email.png" alt="Email"/>
+          </a>
         </div>
         <div className="contactRef">
             <p> 
@@ -12,7 +14,9 @@ const Contact = (props) => {
             </p>
         </div>
         <div className="logoPic">
+          <a href="https://github.com/NateMorgan" target="_blank" rel="noreferrer">
             <img className="contact-img" src="/img/logos/GitHub.png" alt="Github"/>
+          </a>
         </div>
         <div className="contactRef">
             <p>
@@ -21,7 +25,9 @@ const Contact = (props) => {
             </p>
         </div>
         <div className="logoPic">
+          <a href="https://www.linkedin.com/in/nathaniel-r-morgan/" target="_blank" rel="noreferrer">
             <img className="contact-img" src="/img/logos/LinkedIn.png" alt="LinkedIn"/>
+          </a>
         </div>
         <div className="contactRef">
             <p> 
@@ -30,7 +36,9 @@ const Contact = (props) => {
             </p>
         </div>
         <div className="logoPic">
+          <a href="https://twitter.com/Nate_R_Morgan" target="_blank" rel="noreferrer">
             <img className="contact-img" src="/img/logos/Twitter.png" alt="Twitter"/>
+          </a>
         </div>
         <div className="contactRef">
             <p> 
