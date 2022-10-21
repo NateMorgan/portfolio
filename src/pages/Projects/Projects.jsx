@@ -13,7 +13,7 @@ const Projects = (props) => {
             <div className="card-body">
               <h5 className="card-title"> Taste of TikTok</h5>
               <p className="card-text"><b>Tech Used:</b> React, MongoDB, Express, Node</p>
-              <p className="card-text"><b>Info:</b> Application designed to make explore local restaurant based off of TikTok restaurant review videos</p>
+              <p className="card-text"><b>Info:</b> Application designed to make and explore local restaurants based off of TikTok restaurant review videos</p>
               <p className='btn btn-primary m-1'>Vist Application</p>
               <p className='btn btn-primary m-1'>Visit Project GitHub</p>
             </div>
