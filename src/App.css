@@ -1,6 +1,6 @@
 .App {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
   text-align: center;
   display: grid;
@@ -19,7 +19,7 @@ header{
 header h1{
   margin:0 0 0 5px;
   text-align: left;
-  font-size: xxx-large;
+  font-size: max(min(10vw,50px),40px);
 }
 
 h1{
@@ -151,8 +151,9 @@ footer p{
 }
 
 .logoPic{
-  width: 125px;
-  align-self:center;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
 .contact-img
@@ -160,6 +161,7 @@ footer p{
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+  width: 125px;
 }
 
 #contacts{
@@ -170,11 +172,8 @@ footer p{
 #leftSideContact{
   /* grid-area:"left"; */
   display: grid;
-  grid-template-columns: 1fr 3fr;
   grid-auto-rows: 125px;
-  float:left;
-  gap: 40px;
-  margin: 5% 10% 0 10%;
+  
 }
 
 #rightSide{
@@ -187,6 +186,14 @@ footer p{
     width: 400px;
     float:right;
     align-items: flex-end;
+    
+  }
+
+  #leftSideContact{
+    grid-template-columns: 1fr 3fr;
+    float:left;
+    gap: 40px;
+    margin: 5% 10% 0 10%;
   }
 }
 
@@ -199,6 +206,6 @@ footer p{
 
   #rightSide{
     display: block;
-    max-width: 500px;
+    max-width: 100%;
   }
 }
