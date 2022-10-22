@@ -4,12 +4,9 @@
   margin: 0;
   text-align: center;
   display: grid;
-  grid-template-rows: 70px 50px 1fr 30px;
+  grid-template-rows: 50px 50px 1fr 30px;
   grid-template-areas: "header" "nav" "main" "footer";
 }
-
-
-
 
 .App-link {
   color: #61dafb;
@@ -59,8 +56,6 @@ footer p{
 
 /*  Some code heavily modified from */
 /* https://codepen.io/swards/pen/gxQmbj */
-
-
 
 .chat-container{
   display: flex;
@@ -186,6 +181,12 @@ footer p{
 
 #rightSide{
   display: none;
+}
+
+@media only screen and (min-width: 430px) {
+  .App {
+    grid-template-rows: 75px 50px 1fr 30px;
+  }
 }
 
 @media only screen and (min-width: 800px) {
