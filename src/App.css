@@ -8,6 +8,9 @@
   grid-template-areas: "header" "nav" "main" "footer";
 }
 
+
+
+
 .App-link {
   color: #61dafb;
 }
@@ -57,11 +60,7 @@ footer p{
 /*  Some code heavily modified from */
 /* https://codepen.io/swards/pen/gxQmbj */
 
-.chat-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  
-}
+
 
 .chat-container{
   display: flex;
@@ -74,10 +73,10 @@ footer p{
 }
 
 .chat {
-  width: 550px;
+  width: min(550px,100%);
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px 0 0 0;
   align-items: flex-end;
   justify-content: flex-end;
 }
@@ -91,7 +90,7 @@ footer p{
 .message {
   border-radius: 20px;
   padding: 8px 15px;
-  margin-top: 5px;
+  margin-top: 3px;
   margin-bottom: 5px;
   display: inline-block;
   font-size: 1.4rem;
@@ -134,15 +133,26 @@ footer p{
   border-bottom-left-radius: 10px;
 }
 
+.message>h1{
+  font-size: 8vw;
+}
+
 /* End of chat code */
 
 .img-container{
   display:flex;
   align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .headshot{
   display: none;
+  width:0;
+}
+
+.headshot-landing{
+  width: min(55vw,310px);
+  
 }
 
 .contactRef{
@@ -169,7 +179,6 @@ footer p{
 }
 
 #leftSideContact{
-  /* grid-area:"left"; */
   display: grid;
   grid-auto-rows: 125px;
   
@@ -180,11 +189,16 @@ footer p{
 }
 
 @media only screen and (min-width: 800px) {
-  .headshot{
+  .headshot, .headshot-landing{
     display: block;
     width: 400px;
     float:right;
     align-items: flex-end;
+  }
+
+  .chat-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     
   }
 
@@ -193,6 +207,10 @@ footer p{
     float:left;
     gap: 40px;
     margin: 5% 10% 0 10%;
+  }
+
+  .message>h1{
+    font-size: XXX-large;
   }
 }
 
@@ -206,5 +224,15 @@ footer p{
   #rightSide{
     display: block;
     max-width: 100%;
+  }
+
+  .message>h1{
+    font-size: 70px;
+  }
+
+  .img-container{
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-start;
   }
 }

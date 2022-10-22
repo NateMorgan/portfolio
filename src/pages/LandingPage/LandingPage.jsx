@@ -1,6 +1,5 @@
 const LandingPage = (props) => {
   return ( 
-    
     <main className='chat-main'>
       <div className="chat-container">
         <div className="chat">
@@ -15,10 +14,10 @@ const LandingPage = (props) => {
         </div>
       </div>
       <div className="img-container">
-        <img className="headshot" src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
+        <img className="headshot-landing" src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
       </div>
     </main>
-   );
+  );
 }
- 
+
 export default LandingPage;

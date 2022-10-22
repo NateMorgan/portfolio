@@ -8,7 +8,7 @@ const AboutMe = (props) => {
               I am a software developer focused on utilizing cutting edge technology to create innovative and efficient tools
             </div>
             <div className="message">
-              My background is working in the insurance industry as an actuarial analyst and in the financial services as an  registered professional
+              My background is working in the insurance industry as an actuarial analyst and in the financial services as a  registered professional
             </div>
             <div className="message">
               I hope to leverage my background in finance to ease the communication gap between developers and business partners 
@@ -26,7 +26,7 @@ const AboutMe = (props) => {
         <img className="headshot" src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
       </div>
     </main>
-   );
+  );
 }
- 
+
 export default AboutMe;

@@ -4,7 +4,7 @@ const Resume = (props) => {
       <embed 
         type="application/pdf" 
         src="./resume.pdf"
-        height="92%"
+        height="90%"
         width="80%"
         />
       <div className="buttonDiv">
