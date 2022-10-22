@@ -4,7 +4,7 @@
   margin: 0;
   text-align: center;
   display: grid;
-  grid-template-rows: 50px 50px 1fr 30px;
+  grid-template-rows: 70px 50px 1fr 30px;
   grid-template-areas: "header" "nav" "main" "footer";
 }
 
@@ -22,11 +22,11 @@ header{
 header h1{
   margin:0 0 0 5px;
   text-align: left;
-  font-size: max(min(10vw,50px),40px);
+  font-size: max(min(10vw,60px),40px);
 }
 
 h1{
-  font-size: 70px;
+  font-size: 50px;
 }
 
 nav{
@@ -227,7 +227,7 @@ footer p{
   }
 
   .message>h1{
-    font-size: 70px;
+    font-size: 64px;
   }
 
   .img-container{
