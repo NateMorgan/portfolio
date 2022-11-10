@@ -183,6 +183,11 @@ footer p{
   display: none;
 }
 
+#cw {
+  position: fixed;
+  z-index: -1;
+}
+
 @media only screen and (min-width: 430px) {
   .App {
     grid-template-rows: 75px 50px 1fr 30px;

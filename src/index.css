@@ -16,10 +16,26 @@ code {
     monospace;
 }
 
+canvas{
+  height:100%;
+  width:100%;
+}
+
+#canvas-container{
+  height: 300px;
+  clip-path: polygon(0 0,100% 0, 100% 65%, 0 100%);
+}
+
 a{
   text-decoration: none;
   color:black
 }
 a:hover{
   color: gray;
+}
+
+#root{
+  position:absolute;
+  top:0px;
+
 }

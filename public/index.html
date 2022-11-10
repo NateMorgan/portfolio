@@ -16,11 +16,21 @@
     <!-- JavaScript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
+    <script defer src="./pointerEffect.js" type="application/javascript"></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Nathaniel Morgan</title>
   </head>
   <body>
+    <div id="canvas-container">
+      <canvas 
+        id="cw" 
+        width="32" 
+        height="32"
+      >
+        Cool glowing canvas
+      </canvas>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
