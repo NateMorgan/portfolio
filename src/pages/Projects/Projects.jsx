@@ -11,11 +11,24 @@ const Projects = (props) => {
           <div className="card">
             <img src={wip} className="card-img-top" alt="..."/>
             <div className="card-body">
+              <h5 className="card-title"> Collect Coins </h5>
+              <p className="card-text"><b>Tech Used:</b> Django, PostgreSQL, Python</p>
+              <p className="card-text"><b>Info:</b> Application designed to make organizing collections of coins easier to manage</p>
+              <a href="https://collect-coins.herokuapp.com/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="https://github.com/NateMorgan/coin-collector" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-6">
+          <div className="card">
+            <img src={wip} className="card-img-top" alt="..."/>
+            <div className="card-body">
               <h5 className="card-title"> Taste of TikTok</h5>
               <p className="card-text"><b>Tech Used:</b> React, MongoDB, Express, Node</p>
               <p className="card-text"><b>Info:</b> Application designed to make and explore local restaurants based off of TikTok restaurant review videos</p>
-              <p className='btn btn-primary m-1'>Vist Application</p>
-              <p className='btn btn-primary m-1'>Visit Project GitHub</p>
+              <a href="https://tots-hot-tots.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="https://github.com/dabyzness/tot-front-end" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
+              
             </div>
           </div>
         </div>
