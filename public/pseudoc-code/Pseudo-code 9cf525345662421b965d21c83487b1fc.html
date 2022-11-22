@@ -1,0 +1,755 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Pseudo-code</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9cf52534-5662-421b-965d-21c83487b1fc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📝</span></div><h1 class="page-title">Pseudo-code</h1></header><div class="page-body"><nav id="08267a1b-235b-4674-94fa-c444527d89eb" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e89d0a8d-9d62-4299-8d9f-c0a2b0f90e4a">Origin of Pseudo-code</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b3854546-1881-40d9-adea-0ad85fe2e739">Blast to the Past</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8e844deb-6919-468a-ae77-4811801dafc1">Welcome Back Marty</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ae9ad603-595c-4a99-8973-a2b54387f171">Enter Pseudo-code</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4f3f2d95-4085-4364-a2cd-1f46fbeac302">Pseudo-coding in Interviews</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#36786242-b016-40f7-b591-1ee21e85b354">Goal of Pseudo-coding</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a8d221c2-58bf-4224-973d-625ba275ebec">Key Steps</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b537b787-a8a8-4ecb-960f-1076d3fc80bb">1. Define Function Inputs/Outputs</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e9aad298-ab87-4809-91ed-8a790ba65f62">2. Name things appropriately</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#13fd036c-c7f7-4522-9fc9-1a6167242a54">3. Work through the Problem</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9fba8bd8-29a8-49c7-9286-23b18af431a2">Example</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f7294c1c-3ae8-4ce3-aa93-d59a91eec531">4. Use General Software Developer Concepts</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4e1dd192-358d-4550-af1c-dd303c9c7f82">Example</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d3076fca-f64f-4dc9-b72d-b48f19adf255">5. Sprinkle in Language Specific Knowledge into Pseudo-Code</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3e7ad542-45e5-4929-b3aa-24b754e48edf">Example</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b72f1b81-ff1c-468a-bc39-1e706aedd1f6">Recap</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b6872af3-c2f3-45ac-8b5a-42ee56e5446b">Example Solution</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#801868ab-203c-4d21-a9b9-3858d41be2d0">Examples in Coding Literature</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5fda937c-3e06-43b7-be41-b34ea1df15a9">Authors</a></div></nav><p id="16df09df-66bf-45c4-82db-eb76d26975d4" class="">
+</p><h1 id="e89d0a8d-9d62-4299-8d9f-c0a2b0f90e4a" class="">Origin of Pseudo-code</h1><h2 id="b3854546-1881-40d9-adea-0ad85fe2e739" class="">Blast to the Past</h2><p id="327adc9b-9884-4a38-9f83-2a70e1d0b1cb" class="">Welcome Time Traveler!  The year is 1928 and IBM has just unveiled the latest in programming technology, the IBM100 also know as the “IBM Card”</p><figure id="6cadb98b-1392-490c-8745-ff07698c3856" class="image"><a href="Pseudo-code%209cf525345662421b965d21c83487b1fc/Used_Punchcard_(5151286161).jpg"><img style="width:1920px" src="Pseudo-code%209cf525345662421b965d21c83487b1fc/Used_Punchcard_(5151286161).jpg"/></a><figcaption><code>IBM 100</code></figcaption></figure><p id="a35d9a88-dcae-45f6-851d-974d089f1c4f" class="">The IBM Card is an example of “punch card” computing.  Software developers in 1928 had to manually “punch” the data they wanted computers to store and read.  </p><p id="c3f1ffe4-8747-4d66-8a68-a13e0ab797a4" class="">But what does the above example mean?  As someone who does not read IBM 100 style code I am left clueless what this “program” does.  How can I, as a stakeholder in a project, know what this developer created?  This is where Pseudo-code comes in handy. Lets travel back to the future to elaborate on this further.</p><h2 id="8e844deb-6919-468a-ae77-4811801dafc1" class="">Welcome Back Marty</h2><p id="9d05cccb-1bbe-4e5a-b1f9-ca4e59deda59" class="">Well, we sure have come a long way since the 1930’s when it comes to program readability.  Take a look at a simple code snippet below:</p><pre id="1897b69b-10ec-4384-bc2d-912c321ccbd0" class="code"><code>a = 1
+b = 2
+print(a+b)</code></pre><p id="ef9c6f63-d750-4b43-9031-02e86fac1681" class="">It doesn’t take a developer to make an accurate assumption about what the code snippet does.  But what about for larger more complicated programs?  Or, what if we don’t have any code in front of us?  How do we communicate the steps our current (or future) program is performing to those around us?</p><h2 id="ae9ad603-595c-4a99-8973-a2b54387f171" class="">Enter Pseudo-code</h2><p id="498e0431-9c4b-46c6-bf78-fbe1c1efc96f" class="">According to the Oxford Dictionary, Pseudo-code is defined as “a notation resembling a simplified programming language, used in program design”.  <strong>Pseudo-code is essentially a language agnostic technique of communicating logic.</strong>  Since Pseudo-code is “language agnostic” we can pick whatever language we want (English, Spanish, Pig Latin), or phrased differently, whichever language will most clearly communicate our message.  No longer are we stuck talking in punch cards, Python, or binary when talking about computers, but with a language like English that is much more familiar in our everyday lives.</p><h1 id="4f3f2d95-4085-4364-a2cd-1f46fbeac302" class="">Pseudo-coding in Interviews</h1><h2 id="36786242-b016-40f7-b591-1ee21e85b354" class="">Goal of Pseudo-coding</h2><p id="7f20b530-f4e3-4b92-b81f-120436504a66" class="">Why is showcasing your ability to pseudo-code important during interviews? Programming languages, frameworks, and tools rise and fall over careers but the foundational understanding of how computers perform tasks tend to stay the same.  Not only that but Pseudo-coding displays your ability to communicate complex software developer concepts to other stakeholders, who may not understand the programming language you are using.</p><p id="3beea8ec-2a3f-422a-8992-1ffeef88088b" class="">As we move through the rest of this section, we are going to keep the key goal of clearly <strong>showcasing and communicating software developer concepts</strong> close by.</p><h2 id="a8d221c2-58bf-4224-973d-625ba275ebec" class="">Key Steps</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0b870905-dafd-4e18-8aaa-67f23f9d964d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Problem: Write a function that combines two arrays by alternatingly taking elements from each array in turn.
+
+[a, b, c, d, e], [1, 2, 3, 4, 5] becomes  [a, 1, b, 2, c, 3, d, 4, e, 5]
+
+[1, 2, 3], [a, b, c, d, e, f] becomes [1, a, 2, b, 3, c, d, e, f]
+
+Points:
+1. The arrays may be of different lengths, with at least one character/digit.
+2. One array will be of string characters (in lower case, a-z), a second of integers (all positive starting at 1).</div></figure><p id="8ff58a37-9104-49c6-8be9-0d7032208cec" class="">
+</p><h3 id="b537b787-a8a8-4ecb-960f-1076d3fc80bb" class="">1. Define Function Inputs/Outputs</h3><p id="082c4ccd-a943-4cd0-88d0-96a5f5a4b9a4" class="">During interviews we are normally asked to solve a specific problem in the form of writing a function in a programming language.  If we think about what a function does at a base level, functions take inputs in order to produces an output.  Since our function is reliant on it’s input and outputs, it only makes sense to start there while Pseudo-coding.</p><p id="0568f7d1-1132-47d4-9b0e-d612ed1fb6b3" class="">The key information we want to know about <strong>inputs</strong> is what is the possible range of values we can get. Are they all numbers, arrays, a mixture of both? This step helps identify if we will need any special cases or error handling.  We also what to flesh out any edge cases that could appear, such as empty lists, floating point numbers, etc.  Asking these questions help <strong>showcase</strong> your understanding of specific programming languages and <strong>software developer concepts</strong>.  Beyond that, defining our inputs also helps us brainstorm any potentially problematic inputs that might trip us up down the line.</p><p id="ccd6d589-6c02-476c-a2e5-323cad0a1bf8" class="">The key information we want to know about <strong>outputs</strong> is what are we returning?  If the question asks for a number and we return an array then not only will never achieve the correct answer, but it shows a lack of critically reading the problem, which could of been easily avoided.  </p><pre id="f0c665a6-8afd-4552-a9dc-d3245628f1a6" class="code code-wrap"><code>// Inputs: Two Arrays of a combination of type Number and String
+// Output: One Array of a combination of type Number and String</code></pre><h3 id="e9aad298-ab87-4809-91ed-8a790ba65f62" class="">2. Name things appropriately</h3><p id="0c7d7d22-6829-4e4f-9448-252fcb3aa8dd" class="">Function and variable names should always be descriptive. Don’t call the function func as that doesn’t tell the reader anything about what the function might do. The same goes for all of your inputs, outputs, and other variables.  Don’t call your input, “input” if you know it has to be an interger.  Try to be specific without being overly wordy.  Again, the goal is to be descriptive with your naming choices.</p><pre id="5ce34bf0-d423-476c-a2dc-2eacc406e740" class="code code-wrap"><code>// Inputs: Two Arrays of a combination of type Number and String
+// Output: One Array of a combination of type Number and String
+
+function mergeArrays(arr1, arr2){
+	
+	return mergedArr
+}
+	</code></pre><h3 id="13fd036c-c7f7-4522-9fc9-1a6167242a54" class="">3. Work through the Problem</h3><p id="59043616-3e2b-47fa-8f6c-a700a49e07a5" class="">Before we can start coding (pseudo-code or real code) we need logic around how to solve this problem.  Using just sentences, work through the problem. How can we go from the input, to the desired output?  What do you want this function to do?  Do you need to create any additional variables to help you solve these problems?  This is the fun part about solving problems!  You don’t have to worry the nitty gritty of solving problem, just the main concepts and ideas. Give it a try and list out the steps to solve our example problem.</p><h3 id="9fba8bd8-29a8-49c7-9286-23b18af431a2" class=""><details open=""><summary>Example</summary></details></h3><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b7ce9c9-4ab2-418d-87fa-16eb8549d070"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Here’s one of the many possible ways to solve this problem</strong>
+  1.  If there is an element in the first position from the first input array, add it to an output array
+  2. If there is an element in the first position from the second input array, add it to an output arrary
+  3. Repeat steps 1 and 2 with the next elements of the input arrays until there are no more elements in both input arrays to be added</div></figure></div><p id="4291e352-6b77-4507-842c-dc7af4bf1dff" class="">
+</p><p id="b0604fdd-fd2f-4f14-bb2f-f844eb764642" class="">Congratulations!  You’ve written your first go at pseudo-code.  But what makes good pseudo-code?  Let’s refer back to the goal we set out earlier: <strong>showcasing and communicating software developer concepts.</strong> </p><p id="410671b7-5d88-4c04-8915-011f1a7686de" class="">Looking at the example written above, did we achieve that goal?  One could argue that we accurately communicated the logic to solve the problem, but we didn’t <strong>showcase</strong> any <strong>software developer concepts.</strong>  This would be great pseudo-code to communicate to non-technical stakeholders, but to technical interviewers we want to show-off a bit.  At this point you’re probably wondering what <strong>software developer concepts </strong>is.  </p><h3 id="f7294c1c-3ae8-4ce3-aa93-d59a91eec531" class="">4. Use General Software Developer Concepts</h3><p id="45f8ca0b-2b46-4561-ac37-d8123d0cda92" class="">Although every coding language has it’s own syntax, keywords, and built-in methods, nearly all programming languages today have constructs that span them all.  These concepts are programming constructs are: <strong>sequence (order)</strong>, <strong>selection (conditions)</strong>, and <strong>iteration (looping)</strong>. </p><p id="b1bed669-41e6-45b3-aa6e-92d7593e26f4" class="">Let’s take a deeper dive into <strong>selection</strong> and <strong>iterations</strong>:</p><p id="0e65a852-b72d-4938-bfbc-1520a55973e6" class=""><strong>Selections</strong> determine which path the code to take while it is running.  These are more commonally known as conditions.  Most modern programming lagnuages use some sort of <strong>If / If Else / Else</strong> keywords.  Those three keywords are perfect to use while you are writing up your pseudo-code.  </p><p id="6390fc49-55a1-4cc9-bae7-e627cd367f77" class=""><strong>Iteration</strong> determines if piece of code should be executed more than one time. This is more commonally known as looping.  Most modern programming lagnuages use some sort of <strong>For / While</strong> keywords. <strong>For</strong> is normally used when you know exactly how many times you want to loop, <strong>While</strong> is used when you don’t know how many times you want to loop.  Use the <strong>For / While</strong> keywords will pseudo-coding and as a bonus talk about why you used one over the other.</p><p id="fbb804ef-bab1-4507-b026-fbb612291833" class="">Some other more general software deleloper concepts that we should really consider are <strong>indentation</strong>. While only some languages require white space as part of their syntax, most languages support indentation for readability.  Proper indenation shows that you can write readable code with commmon conventions.  </p><p id="0c886bac-6c41-45b9-bcf6-f214cd374b5e" class="">Lastly, sprinkle in common software developer terminology like <strong><strong><strong><strong>initialize, index, nodes, constants, pointers, ect. </strong></strong></strong></strong>(when applicable).  </p><h3 id="4e1dd192-358d-4550-af1c-dd303c9c7f82" class=""><details open=""><summary>Example</summary></details></h3><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ceec58a0-3408-4809-85d8-67545f465774"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Here’s an example of better pseudo-code
+</strong>  Initialize an empty array to hold the output
+  For each index in the largest array
+      Access the element at that index in the first array
+      If that element exist
+          Add it to the output array
+      Access the element at that index in the second array
+      If that element exist
+          Add it to the output array</div></figure><p id="2c9ad4f7-ffd9-4e20-be35-f285336faeb8" class="">
+</p></div><h3 id="d3076fca-f64f-4dc9-b72d-b48f19adf255" class="">5. Sprinkle in Language Specific Knowledge into Pseudo-Code</h3><p id="b4a9413f-e674-42c7-8dfe-aaa12d7294ed" class="">For our next step we can even convert some of the our general pseudo-code into language specific code!  We can add in the syntax we are interviewing with and even use language specific method keywords.  What’s nice about doing this step is we can easily and quickly covert this stage of pseudo-code into actual code and not worry about writing </p><h3 id="3e7ad542-45e5-4929-b3aa-24b754e48edf" class=""><details open=""><summary>Example</summary></details></h3><div class="indented"><pre id="3096bc84-cb52-47d0-a4d0-15973a71f40d" class="code code-wrap"><code>// Inputs: Two Arrays of a combination of type Number and String
+// Output: Array of a combination of type Number and String
+
+function mergeArrays(arr1, arr2){
+
+// Initialize an empty array to hold the output
+// For each index in the largest array
+//    Access the element at that index in the first array
+//    If that element exists, Add it to the output array
+//    Access the element at that index in the second array
+//    If that element exists, Add it to the output array
+
+	const mergedArr = []
+
+	for(let i = 0; i &lt; length of largest array; i += 1){
+		if(arr1[i] exists) push arr1[i] to mergedArr
+		if(arr2[i] exists) push arr2[i] to mergedArr		
+	}
+	
+	return mergedArr
+}</code></pre></div><h3 id="b72f1b81-ff1c-468a-bc39-1e706aedd1f6" class="">Recap</h3><p id="7c6544fe-3567-4b0a-8e00-84272dae3617" class="">And we’re done! As you can see, pseudo-code can resemble actual code!  Now our reader can understand what you’re doing, what loops you’re planning on using, what your conditional statements are and what the function is supposed to ultimately do! The reader can very easily translate this into working code. </p><p id="75561a38-4231-4153-9656-f8f5e57da19e" class="">Now this is just a simple example, pseudo-code is a lot more useful for working through very complex solutions. Like the one below:</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="88ac9cc4-48f6-4d3d-a669-9f307cc88d8b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Problem: 
+Write a recursive function that returns an array of all possible outcomes from flipping a coin N times.
+
+If we have 3 coin flips, the final solution would be:
+[’HHH’, ‘HHT’, ‘HTH’, ‘HTT’, ‘TTT’, ‘TTH’, ‘THT’, ‘THH’]</div></figure><p id="87030dff-a5d1-4871-bee5-f3e31b0033d1" class="">Try to work through the above problem by yourself using the ideas covered in this guide. Once your done, try to evaluate how you did.  Did you define the inputs and outputs? How about your logic.  Did you include every step or condition?  Did you use common software development concepts? Common keywords?  Lastly, how did you do <strong>showcasing and communicating software developer concepts?</strong>  Remember, there are always was to <strong>showcase</strong> <strong>and communicate software developer concepts</strong> beyond just psuedo-coding.  If your pseudo-code missed any key ideas, would you have addressed it elsewhere (in your verbal comments or in your actual writing of the code)?  Pseudo-coding is a great place to start but is never the be all end all when it comes to interviewing.  </p><h3 id="b6872af3-c2f3-45ac-8b5a-42ee56e5446b" class=""><details open=""><summary>Example Solution</summary></details></h3><div class="indented"><pre id="818b8fcc-08a1-4b71-8f55-00b6f3a97eda" class="code code-wrap"><code>// Inputs: 1. An Integer for the number of coin flips, 2. An Array of Strings that we&#x27;ll pass through with each iteration, at the beginning it&#x27;ll be empty
+// Outputs: An Array of Strings that contains all possible of combinations &#x27;H&#x27; and &#x27;T&#x27; for the number of flips
+
+function coinFlips(numFlips, arr = []){
+	// Base Case
+	if(no more flips) return arr
+
+	const arrNewFlip = []
+
+	if(arr is empty because its the first iteration) push &#x27;H&#x27; and &#x27;T&#x27; to arrNewFlip
+	else {
+		const arrHeads = map an &#x27;H&#x27; onto every element of arr
+		const arrTails = map a &#x27;T&#x27; onto every element of arr
+		push both arrHeads and arrTails into arrNewFlip
+	}
+
+	return coinFlips(numFlips - 1, arrNewFlip)
+}
+
+// If the problem is recursive, we should walk through the steps and show the reader what the array will look like after each flip. Let&#x27;s again go with numFlips = 3
+
+// Start: numFlips = 3 , arr = []
+// After First Iteration: numFlips = 2, arr = [&#x27;H&#x27;, &#x27;T&#x27;]
+// After Second Iteration: numFlips = 1, arr = [&#x27;HH&#x27;, &#x27;TH&#x27;, &#x27;HT&#x27;, &#x27;TT&#x27;]
+// After Third Iteration: numFlips = 0, arr = [&#x27;HHH&#x27;, &#x27;THH&#x27;, &#x27;HTH&#x27;, &#x27;TTH&#x27;, &#x27;HHT&#x27;, &#x27;THT&#x27;, &#x27;HTH&#x27;, &#x27;TTT&#x27;]
+// numFLips = 0 hits our base case and so it exits out leaving us with that final arr as the solution</code></pre><p id="7e8c2f86-0dcb-4588-aa3c-a42d516c990b" class="">
+</p><p id="5c422d95-4850-4271-9a89-0fceaf4e87f8" class=""><strong><strong><strong>
+
+</strong></strong></strong></p><p id="5cbca430-be15-4fc2-b151-eda7f04bd4da" class="">
+</p></div><h2 id="801868ab-203c-4d21-a9b9-3858d41be2d0" class="">Examples in Coding Literature</h2><p id="74f44c3e-2dea-4041-b39a-22c9566b72dd" class="">Here are some additonal examples of Pseudo-code I found from a couple coding books.  As you look through the various examples, try to ask yourself what you liked about them and what you didn’t.  Much like writing, you’ll develop your own style that you gravitate to.  As long as you focus on the key ideas in this guide, you really can’t go wrong.</p><figure id="1217e80a-1c25-4a8c-a2d4-241e5cc624eb" class="image"><a href="Pseudo-code%209cf525345662421b965d21c83487b1fc/Untitled.png"><img style="width:1460px" src="Pseudo-code%209cf525345662421b965d21c83487b1fc/Untitled.png"/></a><figcaption><code>The Algorithm Design Manual</code> by Steven Skiena </figcaption></figure><figure id="6c38b46d-8a42-4434-b6a8-01978558151c" class="image"><a href="Pseudo-code%209cf525345662421b965d21c83487b1fc/Untitled%201.png"><img style="width:746px" src="Pseudo-code%209cf525345662421b965d21c83487b1fc/Untitled%201.png"/></a><figcaption><code>Cracking the Coding Interview</code> by Gayle Laakmann McDowell</figcaption></figure><h1 id="5fda937c-3e06-43b7-be41-b34ea1df15a9" class="">Authors</h1><p id="e634d0cd-2068-40a9-9d48-088c355e9b6e" class="">Article written by Nathaniel Morgan and Damian Bzdyra</p></div></article></body></html>

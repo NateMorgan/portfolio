@@ -12,6 +12,7 @@ import AboutMe from './pages/AboutMe/AboutMe';
 import Projects from './pages/Projects/Projects';
 import Resume from './pages/Resume/Resume';
 import Contact from './pages/Contact/Contact';
+import Blog from './pages/Blog/Blog';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/projects' element={<Projects/> } />
         <Route path='/resume' element={<Resume/> } />
         <Route path='/contact' element={<Contact/> } />
+        <Route path='/blog' element={<Blog/> } />
       </Routes>
       <Footer/>
     </div>
