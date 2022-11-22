@@ -1,11 +1,11 @@
 const Blog = (props) => {
   return ( 
     <main>
-      <embed
-        type="text/html"
-        src="/pseudoc-code/Pseudo-code 9cf525345662421b965d21c83487b1fc.html"
-        width="100%"
+      <embed 
+        type="application/pdf" 
+        src="./Pseudocode.pdf"
         height="100%"
+        width="100%"
       />
     </main>
 
