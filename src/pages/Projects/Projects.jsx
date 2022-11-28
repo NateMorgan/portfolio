@@ -2,7 +2,10 @@ import bs from './battleship-snap.png'
 import tm from './team-manager-snap.png'
 import tot from './tot-snap.png'
 import cc from './coin-collector-snap.png'
+import sw from './starwars-info.png'
 import wip from './wip.jpeg'
+
+// Images are 900 by 556 or 1800 by 1112
 
 const Projects = (props) => {
   return ( 
@@ -31,6 +34,18 @@ const Projects = (props) => {
               <a href="https://tots-hot-tots.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
               <a href="https://github.com/dabyzness/tot-front-end" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
               
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-6">
+          <div className="card">
+            <img src={sw} className="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title"> Star Wars Info </h5>
+              <p className="card-text"><b>Tech Used:</b> React, Express, Node, RESTful APIs</p>
+              <p className="card-text"><b>Info:</b> Application designed to view starship information from an external API</p>
+              <a href="https://starwars-into.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="https://github.com/NateMorgan/react-swapi" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
             </div>
           </div>
         </div>
