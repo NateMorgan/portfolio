@@ -43,7 +43,7 @@ const Projects = (props) => {
               <h5 className="card-title"> Star Wars Info </h5>
               <p className="card-text"><b>Tech Used:</b> React, Express, Node, RESTful APIs</p>
               <p className="card-text"><b>Info:</b> Application designed to view starship information from an external API</p>
-              <a href="https://starwars-into.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="https://starwars-inform.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
               <a href="https://github.com/NateMorgan/react-swapi" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
             </div>
           </div>
