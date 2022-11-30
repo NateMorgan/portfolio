@@ -21,7 +21,7 @@ const Contact = (props) => {
         <div className="contactRef">
             <p>
               <b>Github: </b>
-              <a href="https://github.com/NateMorgan" target="_blank" rel="noreferrer">https://github.com/NateMorgan</a>
+              <a href="https://github.com/NateMorgan" target="_blank" rel="noreferrer">github.com/NateMorgan</a>
             </p>
         </div>
         <div className="logoPic">
@@ -32,7 +32,7 @@ const Contact = (props) => {
         <div className="contactRef">
             <p> 
               <b> LinkedIn: </b> 
-              <a href="https://www.linkedin.com/in/nathaniel-r-morgan/" target="_blank" rel="noreferrer">https://www.linkedin.com/in/nathaniel-r-morgan/</a>
+              <a href="https://www.linkedin.com/in/nathaniel-r-morgan/" target="_blank" rel="noreferrer">linkedin.com/in/nathaniel-r-morgan/</a>
             </p>
         </div>
         <div className="logoPic">
@@ -43,7 +43,7 @@ const Contact = (props) => {
         <div className="contactRef">
             <p> 
               <b> Twitter: </b> 
-              <a href="https://twitter.com/Nate_R_Morgan" target="_blank" rel="noreferrer">https://twitter.com/Nate_R_Morgan</a>
+              <a href="https://twitter.com/Nate_R_Morgan" target="_blank" rel="noreferrer">twitter.com/Nate_R_Morgan</a>
             </p>
         </div>
       </div>

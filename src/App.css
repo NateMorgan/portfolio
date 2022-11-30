@@ -181,6 +181,7 @@ footer p{
 
 #rightSide{
   display: none;
+  margin-top: 70px;
 }
 
 #cw {
@@ -213,6 +214,7 @@ footer p{
     float:left;
     gap: 40px;
     margin: 5% 10% 0 10%;
+    text-align: left;
   }
 
   .message>h1{
