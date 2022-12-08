@@ -67,7 +67,7 @@ const Projects = (props) => {
               <h5 className="card-title">BATTLESHIP</h5>
               <p className="card-text"><b>Tech Used:</b> Javascript, Bootstrap, CSS, HTML</p>
               <p className="card-text"><b>Info:</b> Classic Battleship game coded in Vanilla Javascript</p>
-              <a href="https://battleship.nate-morgan.com" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="http://battleship.nate-morgan.com" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
               <a href="https://github.com/NateMorgan/battleship" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
             </div>
           </div>
