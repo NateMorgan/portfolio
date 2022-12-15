@@ -48,7 +48,7 @@ const Contact = (props) => {
         </div>
       </div>
       <div id="rightSide">
-          <img className="headshot" src="img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
+          <img className="headshot" src="img/headshot2.png" alt="Headshot of Nathaniel Morgan"/>
       </div>
 
     </main>

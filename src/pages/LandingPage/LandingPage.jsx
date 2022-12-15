@@ -14,7 +14,7 @@ const LandingPage = (props) => {
         </div>
       </div>
       <div className="img-container">
-        <img className="headshot-landing" src="./img/headshot2.jpg" alt="Headshot of Nathaniel Morgan"/>
+        <img className="headshot-landing" src="./img/headshot2.png" alt="Headshot of Nathaniel Morgan"/>
       </div>
     </main>
   );
