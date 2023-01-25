@@ -3,6 +3,7 @@ import tm from './team-manager-snap.png'
 import tot from './tot-snap.png'
 import cc from './coin-collector-snap.png'
 import sw from './starwars-info.png'
+import phone from './react-phonebook.png'
 
 // Images are 900 by 556 or 1800 by 1112
 
@@ -20,7 +21,6 @@ const Projects = (props) => {
               <p className="card-text"><b>Info:</b> Application designed to make and explore local restaurants based off of TikTok restaurant reviews</p>
               <a href="https://tots-hot-tots.netlify.app/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
               <a href="https://github.com/dabyzness/tot-front-end" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
-              
             </div>
           </div>
         </div>
@@ -57,6 +57,18 @@ const Projects = (props) => {
               <p className="card-text"><b>Info:</b> Application designed to make organizing collections of coins easier to manage</p>
               <a href="https://collect-coins.herokuapp.com/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
               <a href="https://github.com/NateMorgan/coin-collector" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-6">
+          <div className="card">
+            <img src={phone} className="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title"> React Phonebook</h5>
+              <p className="card-text"><b>Tech Used:</b> React </p>
+              <p className="card-text"><b>Info:</b> Simple application UI for saving and searching for contacts written in React</p>
+              <a href="http://phonebook.nate-morgan.com/" target="_blank" rel="noreferrer"> <p className='btn btn-primary m-1'> Vist Application</p></a>
+              <a href="https://github.com/NateMorgan/phonebook-react" target="_blank" rel="noreferrer"><p className='btn btn-primary m-1'>Visit Project GitHub</p></a>
             </div>
           </div>
         </div>
