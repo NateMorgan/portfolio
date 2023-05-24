@@ -8,16 +8,16 @@ const AboutMe = (props) => {
               I am a software developer focused on utilizing cutting edge technology to create innovative and efficient tools
             </div>
             <div className="message">
-              My background is working in the insurance industry as an actuarial analyst and in the financial services as a registered professional
+              My background is working in the insurance industry as an actuarial analyst, in the financial services as a registered professional and as a software developer for government focused SAAS company
             </div>
             <div className="message">
-              I hope to leverage my background in big data analytics to ease the communication gap between developers and business partners 
+              I enjoy leveraging my background in big data analytics and financial industry to ease the communication gap between developers and business partners 
             </div>
             <div className="message">
-              My core technology stack includes: React, SQL, MongoDB, Express, Node, Javascript, Python, and Jupyter Notebooks
+              My core technology stack includes: React, SQL, MongoDB, Express, Node, Javascript, Python, Perl, and Jupyter Notebooks
             </div>
             <div className="message last">
-              I am currently in pursuit of an AWS Certified Cloud Practicioner certificate as well as a full-time job
+              I currently have the AWS Certified Cloud Practicioner certificate, my Series 7, and around 3 months of work experience as a software developer
             </div>
           </div>
         </div>
